@@ -13,6 +13,7 @@ import 'package:mydemo1/pages/button_page.dart';
 import 'package:mydemo1/pages/follow_page.dart';
 import 'package:mydemo1/pages/home_page.dart';
 import 'package:mydemo1/pages/intermadiate/login_ui.dart';
+import 'package:mydemo1/pages/intermadiate/shop_ui.dart';
 import 'package:mydemo1/pages/new_page.dart';
 import 'package:mydemo1/pages/profile_page.dart';
 import 'package:mydemo1/pages/search_page.dart';
@@ -41,8 +42,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: false,
       ),
-      home:const LoginUI(),
+      home:const ShopUI(),
       routes: {
+        LoginUI.id: (context) => const LoginUI(),
         SignUpOne.id: (context) => const SignUpOne(),
         PageOne.id: (context) => const PageOne(),
         SplashOne.id: (context) => const SplashOne(),
