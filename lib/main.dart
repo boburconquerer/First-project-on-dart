@@ -13,6 +13,7 @@ import 'package:mydemo1/pages/button_page.dart';
 import 'package:mydemo1/pages/follow_page.dart';
 import 'package:mydemo1/pages/home_page.dart';
 import 'package:mydemo1/pages/intermadiate/app_intro_ui.dart';
+import 'package:mydemo1/pages/intermadiate/jet_market_ui.dart';
 import 'package:mydemo1/pages/intermadiate/login_ui.dart';
 import 'package:mydemo1/pages/intermadiate/shop_ui.dart';
 import 'package:mydemo1/pages/new_page.dart';
@@ -43,8 +44,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: false,
       ),
-      home:const AppIntroUI(),
+      home:const JetMarketUI(),
       routes: {
+        AppIntroUI.id: (context) => const AppIntroUI(),
         ShopUI.id: (context) => const ShopUI(),
         LoginUI.id: (context) => const LoginUI(),
         SignUpOne.id: (context) => const SignUpOne(),
