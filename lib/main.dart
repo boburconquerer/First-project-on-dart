@@ -14,6 +14,7 @@ import 'package:mydemo1/pages/follow_page.dart';
 import 'package:mydemo1/pages/home_page.dart';
 import 'package:mydemo1/pages/intermadiate/amazon_ui.dart';
 import 'package:mydemo1/pages/intermadiate/app_intro_ui.dart';
+import 'package:mydemo1/pages/intermadiate/facebook_ui.dart';
 import 'package:mydemo1/pages/intermadiate/hotel_ui.dart';
 import 'package:mydemo1/pages/intermadiate/jet_market_ui.dart';
 import 'package:mydemo1/pages/intermadiate/login_ui.dart';
@@ -46,8 +47,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: false,
       ),
-      home:const AmazonUI(),
+      home:const FaceBookUI(),
       routes: {
+        AmazonUI.id: (context) => const AmazonUI(),
         HotelUI.id: (context) => const HotelUI(),
         JetMarketUI.id: (context) => const JetMarketUI(),
         AppIntroUI.id: (context) => const AppIntroUI(),
