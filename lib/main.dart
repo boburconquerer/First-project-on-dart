@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mydemo1/pages/1_page.dart';
 import 'package:mydemo1/pages/3_page.dart';
+import 'package:mydemo1/pages/advanced/flutter_toast.dart';
+import 'package:mydemo1/pages/advanced/google_fonts.dart';
 import 'package:mydemo1/pages/alert_dialog.dart';
 import 'package:mydemo1/pages/animation1.dart';
 import 'package:mydemo1/pages/animation2.dart';
@@ -48,8 +50,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: false,
       ),
-      home:const HomePageInsta(),
+      home:const GoogleFontsWidget(),
       routes: {
+        FlutterToast.id: (context) => const FlutterToast(),
+
+        HomePageInsta.id: (context) => const HomePageInsta(),
         FaceBookUI.id: (context) => const FaceBookUI(),
         AmazonUI.id: (context) => const AmazonUI(),
         HotelUI.id: (context) => const HotelUI(),
