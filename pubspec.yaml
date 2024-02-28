@@ -15,7 +15,7 @@ dependencies:
 
   fluttertoast: ^8.2.4
   google_fonts: ^6.1.0
-
+  easy_localization: ^3.0.4
 
 dev_dependencies:
   flutter_test:
@@ -33,6 +33,7 @@ flutter:
   assets:
       - assets/images/
       - assets/fonts/
+      - assets/translations/
 
   fonts:
      - family: Billabong

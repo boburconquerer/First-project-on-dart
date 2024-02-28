@@ -1,8 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:mydemo1/pages/1_page.dart';
 import 'package:mydemo1/pages/3_page.dart';
 import 'package:mydemo1/pages/advanced/flutter_toast.dart';
 import 'package:mydemo1/pages/advanced/google_fonts.dart';
+import 'package:mydemo1/pages/advanced/translations.dart';
 import 'package:mydemo1/pages/alert_dialog.dart';
 import 'package:mydemo1/pages/animation1.dart';
 import 'package:mydemo1/pages/animation2.dart';
@@ -30,17 +32,38 @@ import 'package:mydemo1/pages/settings_page.dart';
 import 'package:mydemo1/pages/watch_page.dart';
 import '../pages/appOneSignUp.dart';
 
+/////////////////////////////////////////////////////////////translations
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+
+  runApp(
+    EasyLocalization(
+      supportedLocales: [
+        Locale('en', 'US'),
+        Locale('uz', 'UZ'),
+        Locale('ru', 'RU')
+      ],
+      path: "assets/translations",
+      fallbackLocale: Locale('en', 'US'),
+      child: MyApp(),
+    )
+  );
 }
+/////////////////////////////////////////////////////////////translations
 
 class MyApp extends StatelessWidget {
+
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       title: 'Flutter Demo',
       theme: ThemeData(
 
@@ -50,8 +73,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: false,
       ),
-      home:const GoogleFontsWidget(),
+      home:const Translations(),
       routes: {
+        GoogleFontsWidget.id: (context) => const GoogleFontsWidget(),
         FlutterToast.id: (context) => const FlutterToast(),
 
         HomePageInsta.id: (context) => const HomePageInsta(),
