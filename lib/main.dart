@@ -4,6 +4,7 @@ import 'package:mydemo1/pages/1_page.dart';
 import 'package:mydemo1/pages/3_page.dart';
 import 'package:mydemo1/pages/advanced/flutter_toast.dart';
 import 'package:mydemo1/pages/advanced/google_fonts.dart';
+import 'package:mydemo1/pages/advanced/sharedpref/shared_pref.dart';
 import 'package:mydemo1/pages/advanced/translations.dart';
 import 'package:mydemo1/pages/alert_dialog.dart';
 import 'package:mydemo1/pages/animation1.dart';
@@ -60,7 +61,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
+      debugShowCheckedModeBanner: false,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
@@ -73,8 +74,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: false,
       ),
-      home:const Translations(),
+      //home:const Translations(),
+      initialRoute: SharedPref.routeName,
       routes: {
+        SharedPref.routeName: (context) => const SharedPref(),
+        Translations.id: (context) => const Translations(),
         GoogleFontsWidget.id: (context) => const GoogleFontsWidget(),
         FlutterToast.id: (context) => const FlutterToast(),
 
